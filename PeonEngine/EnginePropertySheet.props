@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <EngineDir>$(SolutionDir)PeonEngine\</EngineDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(ProjectDir)Binaries\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(EngineDir)Source\;$(EngineDir)Source\ThirdParty\;$(EngineDir)Source\Engine\;$(EngineDir)Source\Core\;$(EngineDir)Source\Renderer;$(EngineDir)Source\Framework;$(EngineDir)Source\Editor;$(EngineDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EDITOR_LOG_PATH=R"($(EngineDir)Logs\)";ENGINE_CONFIG_PATH=R"($(EngineDir)Config\)";EDITOR_CONFIG_FILE_NAME=R"(BaseEditor.ini)";ENGINE_PROJECT_DIR=R"($(EngineDir))";ENGINE_SOURCE_DIR=R"($(EngineDir)Source\)"</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="EngineDir">
+      <Value>$(EngineDir)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
